@@ -16,20 +16,20 @@ namespace WinFormsToDoApp
         public LoginForm(MainForm form)
         {
             InitializeComponent();
-            mainForm = form;
+            mainForm = form;            
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            /*Login login = new Login();
-
-           if (login.login(userTextBox.Text, passwordTextBox.Text))
-           {
-               mainForm.UserName = userTextBox.Text;
-               Close();
-           }*/
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if(mainForm.ToDoApp.Login(usernameTextBox.Text, passwordTextBox.Text))
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Zadali jste spatné uživatelské jméno nebo heslo.");
+            }
         }
     }
 }

@@ -32,21 +32,18 @@
             topLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             userTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             userLabel = new System.Windows.Forms.Label();
-            userLabel1 = new System.Windows.Forms.Label();
+            userDscLabel = new System.Windows.Forms.Label();
             appNamePanel = new System.Windows.Forms.Panel();
             appLabel = new System.Windows.Forms.Label();
             menuStrip = new System.Windows.Forms.MenuStrip();
             logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             mainPanel = new System.Windows.Forms.Panel();
             mainDataGridView = new System.Windows.Forms.DataGridView();
-            taskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Deadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fulfil = new System.Windows.Forms.DataGridViewButtonColumn();
             mainBottomPanel = new System.Windows.Forms.Panel();
             buttonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             detailButton = new System.Windows.Forms.Button();
             addButton = new System.Windows.Forms.Button();
+            deleteButton = new System.Windows.Forms.Button();
             mainTopPanel = new System.Windows.Forms.Panel();
             statisticTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             completedTasksDscLable = new System.Windows.Forms.Label();
@@ -74,16 +71,18 @@
             // 
             // topPanel
             // 
+            topPanel.AutoSize = true;
             topPanel.Controls.Add(topLayoutPanel);
             topPanel.Controls.Add(appNamePanel);
             topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             topPanel.Location = new System.Drawing.Point(0, 24);
             topPanel.Name = "topPanel";
-            topPanel.Size = new System.Drawing.Size(800, 100);
+            topPanel.Size = new System.Drawing.Size(684, 51);
             topPanel.TabIndex = 0;
             // 
             // topLayoutPanel
             // 
+            topLayoutPanel.AutoSize = true;
             topLayoutPanel.ColumnCount = 3;
             topLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             topLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -92,10 +91,9 @@
             topLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             topLayoutPanel.Location = new System.Drawing.Point(0, 30);
             topLayoutPanel.Name = "topLayoutPanel";
-            topLayoutPanel.RowCount = 2;
+            topLayoutPanel.RowCount = 1;
             topLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            topLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            topLayoutPanel.Size = new System.Drawing.Size(800, 70);
+            topLayoutPanel.Size = new System.Drawing.Size(684, 21);
             topLayoutPanel.TabIndex = 4;
             // 
             // userTableLayoutPanel
@@ -105,13 +103,13 @@
             userTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             userTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             userTableLayoutPanel.Controls.Add(userLabel, 1, 0);
-            userTableLayoutPanel.Controls.Add(userLabel1, 0, 0);
+            userTableLayoutPanel.Controls.Add(userDscLabel, 0, 0);
             userTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             userTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             userTableLayoutPanel.Name = "userTableLayoutPanel";
             userTableLayoutPanel.RowCount = 1;
             userTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            userTableLayoutPanel.Size = new System.Drawing.Size(210, 29);
+            userTableLayoutPanel.Size = new System.Drawing.Size(210, 15);
             userTableLayoutPanel.TabIndex = 3;
             // 
             // userLabel
@@ -120,22 +118,21 @@
             userLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             userLabel.Location = new System.Drawing.Point(116, 0);
             userLabel.Name = "userLabel";
-            userLabel.Size = new System.Drawing.Size(91, 29);
+            userLabel.Size = new System.Drawing.Size(91, 15);
             userLabel.TabIndex = 2;
             userLabel.Text = "Jméno uživatele";
             userLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // userLabel1
+            // userDscLabel
             // 
-            userLabel1.AutoSize = true;
-            userLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            userLabel1.Location = new System.Drawing.Point(3, 0);
-            userLabel1.Name = "userLabel1";
-            userLabel1.Size = new System.Drawing.Size(107, 29);
-            userLabel1.TabIndex = 1;
-            userLabel1.Text = "Přihlášený uživatel:";
-            userLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            userLabel1.Click += label1_Click;
+            userDscLabel.AutoSize = true;
+            userDscLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            userDscLabel.Location = new System.Drawing.Point(3, 0);
+            userDscLabel.Name = "userDscLabel";
+            userDscLabel.Size = new System.Drawing.Size(107, 15);
+            userDscLabel.TabIndex = 1;
+            userDscLabel.Text = "Přihlášený uživatel:";
+            userDscLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // appNamePanel
             // 
@@ -143,7 +140,7 @@
             appNamePanel.Dock = System.Windows.Forms.DockStyle.Top;
             appNamePanel.Location = new System.Drawing.Point(0, 0);
             appNamePanel.Name = "appNamePanel";
-            appNamePanel.Size = new System.Drawing.Size(800, 30);
+            appNamePanel.Size = new System.Drawing.Size(684, 30);
             appNamePanel.TabIndex = 4;
             // 
             // appLabel
@@ -152,7 +149,7 @@
             appLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             appLabel.Location = new System.Drawing.Point(0, 0);
             appLabel.Name = "appLabel";
-            appLabel.Size = new System.Drawing.Size(800, 30);
+            appLabel.Size = new System.Drawing.Size(684, 30);
             appLabel.TabIndex = 0;
             appLabel.Text = "ToDoApp";
             appLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -162,7 +159,7 @@
             menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { logoutToolStripMenuItem });
             menuStrip.Location = new System.Drawing.Point(0, 0);
             menuStrip.Name = "menuStrip";
-            menuStrip.Size = new System.Drawing.Size(800, 24);
+            menuStrip.Size = new System.Drawing.Size(684, 24);
             menuStrip.TabIndex = 3;
             menuStrip.Text = "menuStrip1";
             // 
@@ -171,6 +168,7 @@
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             logoutToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             logoutToolStripMenuItem.Text = "&Odhlásit se";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // mainPanel
             // 
@@ -178,9 +176,9 @@
             mainPanel.Controls.Add(mainBottomPanel);
             mainPanel.Controls.Add(mainTopPanel);
             mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            mainPanel.Location = new System.Drawing.Point(0, 124);
+            mainPanel.Location = new System.Drawing.Point(0, 75);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new System.Drawing.Size(800, 311);
+            mainPanel.Size = new System.Drawing.Size(684, 271);
             mainPanel.TabIndex = 1;
             // 
             // mainDataGridView
@@ -190,67 +188,43 @@
             mainDataGridView.AllowUserToOrderColumns = true;
             mainDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            mainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { taskName, Deadline, State, fulfil });
             mainDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             mainDataGridView.Location = new System.Drawing.Point(0, 30);
             mainDataGridView.Name = "mainDataGridView";
+            mainDataGridView.ReadOnly = true;
             mainDataGridView.RowHeadersVisible = false;
             mainDataGridView.RowTemplate.Height = 25;
             mainDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            mainDataGridView.Size = new System.Drawing.Size(800, 235);
+            mainDataGridView.Size = new System.Drawing.Size(684, 195);
             mainDataGridView.TabIndex = 2;
-            // 
-            // taskName
-            // 
-            taskName.HeaderText = "Název úkolu";
-            taskName.Name = "taskName";
-            taskName.ReadOnly = true;
-            // 
-            // Deadline
-            // 
-            Deadline.HeaderText = "Termín";
-            Deadline.Name = "Deadline";
-            Deadline.ReadOnly = true;
-            // 
-            // State
-            // 
-            State.HeaderText = "Stav";
-            State.Name = "State";
-            State.ReadOnly = true;
-            State.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            State.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // fulfil
-            // 
-            fulfil.HeaderText = "Splnit";
-            fulfil.Name = "fulfil";
-            fulfil.Text = "Splnit";
             // 
             // mainBottomPanel
             // 
             mainBottomPanel.AutoSize = true;
             mainBottomPanel.Controls.Add(buttonTableLayoutPanel);
             mainBottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            mainBottomPanel.Location = new System.Drawing.Point(0, 265);
+            mainBottomPanel.Location = new System.Drawing.Point(0, 225);
             mainBottomPanel.Name = "mainBottomPanel";
-            mainBottomPanel.Size = new System.Drawing.Size(800, 46);
+            mainBottomPanel.Size = new System.Drawing.Size(684, 46);
             mainBottomPanel.TabIndex = 1;
             // 
             // buttonTableLayoutPanel
             // 
             buttonTableLayoutPanel.AutoSize = true;
-            buttonTableLayoutPanel.ColumnCount = 3;
+            buttonTableLayoutPanel.ColumnCount = 4;
             buttonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             buttonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             buttonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            buttonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             buttonTableLayoutPanel.Controls.Add(detailButton, 0, 0);
             buttonTableLayoutPanel.Controls.Add(addButton, 2, 0);
+            buttonTableLayoutPanel.Controls.Add(deleteButton, 3, 0);
             buttonTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             buttonTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             buttonTableLayoutPanel.Name = "buttonTableLayoutPanel";
             buttonTableLayoutPanel.RowCount = 1;
             buttonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            buttonTableLayoutPanel.Size = new System.Drawing.Size(800, 46);
+            buttonTableLayoutPanel.Size = new System.Drawing.Size(684, 46);
             buttonTableLayoutPanel.TabIndex = 0;
             // 
             // detailButton
@@ -268,13 +242,24 @@
             // addButton
             // 
             addButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            addButton.Location = new System.Drawing.Point(630, 3);
-            addButton.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            addButton.Location = new System.Drawing.Point(358, 3);
             addButton.Name = "addButton";
             addButton.Size = new System.Drawing.Size(150, 40);
             addButton.TabIndex = 1;
             addButton.Text = "Přidat úkol";
             addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_Click;
+            // 
+            // deleteButton
+            // 
+            deleteButton.Location = new System.Drawing.Point(514, 3);
+            deleteButton.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new System.Drawing.Size(150, 40);
+            deleteButton.TabIndex = 2;
+            deleteButton.Text = "Smazat úkol";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // mainTopPanel
             // 
@@ -282,7 +267,7 @@
             mainTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             mainTopPanel.Location = new System.Drawing.Point(0, 0);
             mainTopPanel.Name = "mainTopPanel";
-            mainTopPanel.Size = new System.Drawing.Size(800, 30);
+            mainTopPanel.Size = new System.Drawing.Size(684, 30);
             mainTopPanel.TabIndex = 0;
             // 
             // statisticTableLayoutPanel
@@ -302,7 +287,7 @@
             statisticTableLayoutPanel.Name = "statisticTableLayoutPanel";
             statisticTableLayoutPanel.RowCount = 1;
             statisticTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            statisticTableLayoutPanel.Size = new System.Drawing.Size(800, 30);
+            statisticTableLayoutPanel.Size = new System.Drawing.Size(684, 30);
             statisticTableLayoutPanel.TabIndex = 0;
             // 
             // completedTasksDscLable
@@ -331,7 +316,7 @@
             // 
             tasksInProgressDscLabel.AutoSize = true;
             tasksInProgressDscLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            tasksInProgressDscLabel.Location = new System.Drawing.Point(662, 0);
+            tasksInProgressDscLabel.Location = new System.Drawing.Point(546, 0);
             tasksInProgressDscLabel.Name = "tasksInProgressDscLabel";
             tasksInProgressDscLabel.Size = new System.Drawing.Size(116, 30);
             tasksInProgressDscLabel.TabIndex = 3;
@@ -342,7 +327,7 @@
             // 
             tasksInProgressLabel.AutoSize = true;
             tasksInProgressLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            tasksInProgressLabel.Location = new System.Drawing.Point(784, 0);
+            tasksInProgressLabel.Location = new System.Drawing.Point(668, 0);
             tasksInProgressLabel.Name = "tasksInProgressLabel";
             tasksInProgressLabel.Size = new System.Drawing.Size(13, 30);
             tasksInProgressLabel.TabIndex = 4;
@@ -354,9 +339,9 @@
             bottomPanel.AutoSize = true;
             bottomPanel.Controls.Add(tableLayoutPanel1);
             bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            bottomPanel.Location = new System.Drawing.Point(0, 435);
+            bottomPanel.Location = new System.Drawing.Point(0, 346);
             bottomPanel.Name = "bottomPanel";
-            bottomPanel.Size = new System.Drawing.Size(800, 15);
+            bottomPanel.Size = new System.Drawing.Size(684, 15);
             bottomPanel.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -373,7 +358,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(800, 15);
+            tableLayoutPanel1.Size = new System.Drawing.Size(684, 15);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // creatorLabel
@@ -391,7 +376,7 @@
             // 
             versionLabel.AutoSize = true;
             versionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            versionLabel.Location = new System.Drawing.Point(768, 0);
+            versionLabel.Location = new System.Drawing.Point(652, 0);
             versionLabel.Name = "versionLabel";
             versionLabel.Size = new System.Drawing.Size(29, 15);
             versionLabel.TabIndex = 1;
@@ -402,7 +387,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(684, 361);
             Controls.Add(mainPanel);
             Controls.Add(bottomPanel);
             Controls.Add(topPanel);
@@ -412,6 +397,7 @@
             Name = "MainForm";
             Text = "ToDoApp";
             topPanel.ResumeLayout(false);
+            topPanel.PerformLayout();
             topLayoutPanel.ResumeLayout(false);
             topLayoutPanel.PerformLayout();
             userTableLayoutPanel.ResumeLayout(false);
@@ -442,7 +428,7 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Label userLabel;
-        private System.Windows.Forms.Label userLabel1;
+        private System.Windows.Forms.Label userDscLabel;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel topLayoutPanel;
@@ -463,9 +449,6 @@
         private System.Windows.Forms.Label creatorLabel;
         private System.Windows.Forms.Label versionLabel;
         private System.Windows.Forms.DataGridView mainDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taskName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Deadline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn State;
-        private System.Windows.Forms.DataGridViewButtonColumn fulfil;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

@@ -35,12 +35,12 @@
             priorityLabel = new System.Windows.Forms.Label();
             priorityCombobox = new System.Windows.Forms.ComboBox();
             descriptionLabel = new System.Windows.Forms.Label();
-            richTextBox1 = new System.Windows.Forms.RichTextBox();
+            descriptionRichTextBox1 = new System.Windows.Forms.RichTextBox();
             detailTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             deadlineDateTimePicker = new System.Windows.Forms.DateTimePicker();
             deadlineLabel = new System.Windows.Forms.Label();
             deadlineTimeLabel = new System.Windows.Forms.Label();
-            deadlineDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            deadlineTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             saveButton = new System.Windows.Forms.Button();
             stateLabel = new System.Windows.Forms.Label();
             stateComboBox = new System.Windows.Forms.ComboBox();
@@ -74,7 +74,7 @@
             detailTableLayoutPanel2.Controls.Add(priorityLabel, 0, 2);
             detailTableLayoutPanel2.Controls.Add(priorityCombobox, 0, 3);
             detailTableLayoutPanel2.Controls.Add(descriptionLabel, 0, 4);
-            detailTableLayoutPanel2.Controls.Add(richTextBox1, 0, 5);
+            detailTableLayoutPanel2.Controls.Add(descriptionRichTextBox1, 0, 5);
             detailTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             detailTableLayoutPanel2.Location = new System.Drawing.Point(13, 13);
             detailTableLayoutPanel2.Name = "detailTableLayoutPanel2";
@@ -139,16 +139,16 @@
             descriptionLabel.Text = "Popis";
             descriptionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // richTextBox1
+            // descriptionRichTextBox1
             // 
-            richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            richTextBox1.Location = new System.Drawing.Point(3, 153);
-            richTextBox1.MaxLength = 500;
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new System.Drawing.Size(370, 279);
-            richTextBox1.TabIndex = 5;
-            richTextBox1.Text = "";
-            richTextBox1.WordWrap = false;
+            descriptionRichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            descriptionRichTextBox1.Location = new System.Drawing.Point(3, 153);
+            descriptionRichTextBox1.MaxLength = 500;
+            descriptionRichTextBox1.Name = "descriptionRichTextBox1";
+            descriptionRichTextBox1.Size = new System.Drawing.Size(370, 279);
+            descriptionRichTextBox1.TabIndex = 5;
+            descriptionRichTextBox1.Text = "";
+            descriptionRichTextBox1.WordWrap = false;
             // 
             // detailTableLayoutPanel3
             // 
@@ -157,7 +157,7 @@
             detailTableLayoutPanel3.Controls.Add(deadlineDateTimePicker, 0, 1);
             detailTableLayoutPanel3.Controls.Add(deadlineLabel, 0, 0);
             detailTableLayoutPanel3.Controls.Add(deadlineTimeLabel, 0, 2);
-            detailTableLayoutPanel3.Controls.Add(deadlineDateTimePicker1, 0, 3);
+            detailTableLayoutPanel3.Controls.Add(deadlineTimeDateTimePicker, 0, 3);
             detailTableLayoutPanel3.Controls.Add(saveButton, 0, 6);
             detailTableLayoutPanel3.Controls.Add(stateLabel, 0, 4);
             detailTableLayoutPanel3.Controls.Add(stateComboBox, 0, 5);
@@ -205,16 +205,16 @@
             deadlineTimeLabel.Text = "Čas termínu";
             deadlineTimeLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // deadlineDateTimePicker1
+            // deadlineTimeDateTimePicker
             // 
-            deadlineDateTimePicker1.CustomFormat = "\"hh:mm:ss\"";
-            deadlineDateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            deadlineDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            deadlineDateTimePicker1.Location = new System.Drawing.Point(3, 93);
-            deadlineDateTimePicker1.Name = "deadlineDateTimePicker1";
-            deadlineDateTimePicker1.ShowUpDown = true;
-            deadlineDateTimePicker1.Size = new System.Drawing.Size(370, 23);
-            deadlineDateTimePicker1.TabIndex = 3;
+            deadlineTimeDateTimePicker.CustomFormat = "\"hh:mm:ss\"";
+            deadlineTimeDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            deadlineTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            deadlineTimeDateTimePicker.Location = new System.Drawing.Point(3, 93);
+            deadlineTimeDateTimePicker.Name = "deadlineTimeDateTimePicker";
+            deadlineTimeDateTimePicker.ShowUpDown = true;
+            deadlineTimeDateTimePicker.Size = new System.Drawing.Size(370, 23);
+            deadlineTimeDateTimePicker.TabIndex = 3;
             // 
             // saveButton
             // 
@@ -227,6 +227,7 @@
             saveButton.TabIndex = 4;
             saveButton.Text = "Uložit změny";
             saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // stateLabel
             // 
@@ -274,12 +275,12 @@
         private System.Windows.Forms.Label priorityLabel;
         private System.Windows.Forms.ComboBox priorityCombobox;
         private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox descriptionRichTextBox1;
         private System.Windows.Forms.TableLayoutPanel detailTableLayoutPanel3;
         private System.Windows.Forms.Label deadlineLabel;
         private System.Windows.Forms.DateTimePicker deadlineDateTimePicker;
         private System.Windows.Forms.Label deadlineTimeLabel;
-        private System.Windows.Forms.DateTimePicker deadlineDateTimePicker1;
+        private System.Windows.Forms.DateTimePicker deadlineTimeDateTimePicker;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label stateLabel;
         private System.Windows.Forms.ComboBox stateComboBox;
