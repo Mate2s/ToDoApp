@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ToDoAppLib;
-using ToDoAppLib.Database;
+using ToDoAppLib.Database.Models;
 using ToDoAppLib.Enums;
 using ToDoAppLib.Iterface;
 

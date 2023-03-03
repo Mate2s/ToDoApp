@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             topPanel = new System.Windows.Forms.Panel();
             topLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             userTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -186,17 +187,30 @@
             mainDataGridView.AllowUserToAddRows = false;
             mainDataGridView.AllowUserToDeleteRows = false;
             mainDataGridView.AllowUserToOrderColumns = true;
+            mainDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            mainDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             mainDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            mainDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             mainDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            mainDataGridView.EnableHeadersVisualStyles = false;
             mainDataGridView.Location = new System.Drawing.Point(0, 30);
             mainDataGridView.Name = "mainDataGridView";
             mainDataGridView.ReadOnly = true;
+            mainDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             mainDataGridView.RowHeadersVisible = false;
             mainDataGridView.RowTemplate.Height = 25;
             mainDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             mainDataGridView.Size = new System.Drawing.Size(684, 195);
             mainDataGridView.TabIndex = 2;
+            mainDataGridView.CellDoubleClick += mainDataGridView_CellDoubleClick;
             // 
             // mainBottomPanel
             // 
@@ -393,7 +407,7 @@
             Controls.Add(topPanel);
             Controls.Add(menuStrip);
             MainMenuStrip = menuStrip;
-            MinimumSize = new System.Drawing.Size(500, 39);
+            MinimumSize = new System.Drawing.Size(550, 300);
             Name = "MainForm";
             Text = "ToDoApp";
             topPanel.ResumeLayout(false);

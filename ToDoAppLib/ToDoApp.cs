@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using ToDoAppLib.Database;
+using ToDoAppLib.Database.Data;
+using ToDoAppLib.Database.Models;
 using ToDoAppLib.Enums;
 using ToDoAppLib.Iterface;
 
@@ -30,7 +31,7 @@ namespace ToDoAppLib
                                 select user;
                     if (query.Count() == 0)
                     {
-                        var user = new User { Username = "admin", Password = "admin" };
+                        var user = new User { Username = "admin", Password = "admin" , Email= "test@test.cz"};
                         db.Users.Add(user);
                         db.ToDoTasks.Add(new ToDoTask
                         {
@@ -45,7 +46,7 @@ namespace ToDoAppLib
                     db.SaveChanges();
                 }
             }
-            catch (Exception ex)
+            catch
             {
 
             }
@@ -119,20 +120,18 @@ namespace ToDoAppLib
             {
                 using (var db = new ToDoContext())
                 {
-                    var itemToRemove = db.ToDoTasks.SingleOrDefault(x => x.IdToDoTask == toDoTask.IdToDoTask); //returns a single item.
+                    var itemToRemove = db.ToDoTasks.SingleOrDefault(x => x.IdToDoTask == toDoTask.IdToDoTask);
 
                     if (itemToRemove != null)
                     {
                         db.ToDoTasks.Remove(itemToRemove);
                         db.SaveChanges();
                     }
-                    /*db.ToDoTasks.Remove(toDoTask);
-                    db.SaveChanges();*/
                 }
             }
             catch
             {
-                //throw new Exception("DB - delete failed");
+                // throw new Exception("DB - delete failed");
             }
         }
 

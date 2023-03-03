@@ -51,15 +51,11 @@ namespace WinFormsToDoApp
             tasksInProgressLabel.Text = tasksInProgress.ToString();
 
             checkDeadline();
-
         }
         public string GetTaskName()
         {
             return mainDataGridView.SelectedCells[0].Value.ToString();
         }
-
-
-       
 
         private void detailButton_Click(object sender, EventArgs e)
         {
@@ -94,18 +90,27 @@ namespace WinFormsToDoApp
                 if (deadline < DateTime.Now)
                 {
                     mainDataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
-                    if (status == State.Done)
-                    {
-                        mainDataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
-                    }
+                }
+                if (status == State.Done)
+                {
+                    mainDataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
                 }
             }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            login();
-            RefreshUI();
+            DialogResult r = MessageBox.Show("Opravdu se chcete odhlásit?", "Potvrzení", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (r == DialogResult.OK)
+            {
+                login();
+                RefreshUI();
+            }
+        }
+
+        private void mainDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            detailButton_Click(sender, e);
         }
     }
 }
