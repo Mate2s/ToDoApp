@@ -85,12 +85,16 @@ namespace WinFormsToDoApp
         {
             for (int i = 0; i < mainDataGridView.Rows.Count; i++)
             {
-                var deadline = (DateTime)mainDataGridView.Rows[i].Cells[2].Value;
-                var status = (State)mainDataGridView.Rows[i].Cells[1].Value;
-                if (deadline < DateTime.Now)
+                if (mainDataGridView.Rows[i].Cells[2].Value != null)
                 {
-                    mainDataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
+                    var deadline = (DateTime)mainDataGridView.Rows[i].Cells[2].Value;
+                    if (deadline < DateTime.Now)
+                    {
+                        mainDataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
+                    }
                 }
+
+                var status = (State)mainDataGridView.Rows[i].Cells[1].Value;    
                 if (status == State.Done)
                 {
                     mainDataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;

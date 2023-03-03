@@ -51,8 +51,16 @@ namespace WinFormsToDoApp
                 taskNameTextBox.Text = toDoTask.Name;
                 priorityCombobox.SelectedItem = toDoTask.Priority;
                 descriptionRichTextBox1.Text = toDoTask.Description;
-                deadlineDateTimePicker.Value = (DateTime)toDoTask.Deadline;
-                deadlineTimeDateTimePicker.Value = (DateTime)toDoTask.Deadline;
+                if (toDoTask.Deadline != null)
+                {
+                    deadlineDateTimePicker.Value = (DateTime)toDoTask.Deadline;
+                    deadlineTimeDateTimePicker.Value = (DateTime)toDoTask.Deadline;
+                }
+                else
+                {
+                    datetimeCheckBox.Checked = false;
+                }
+
                 stateComboBox.SelectedItem = toDoTask.State;
             }
         }
@@ -65,12 +73,32 @@ namespace WinFormsToDoApp
             toDoTask.Name = taskNameTextBox.Text;
             toDoTask.Priority = (Priority)priorityCombobox.SelectedItem;
             toDoTask.Description = descriptionRichTextBox1.Text;
-            toDoTask.Deadline = new DateTime(deadlineDateTimePicker.Value.Year, deadlineDateTimePicker.Value.Month, deadlineDateTimePicker.Value.Day, deadlineTimeDateTimePicker.Value.Hour, deadlineTimeDateTimePicker.Value.Minute, deadlineTimeDateTimePicker.Value.Second);
+
+            if (datetimeCheckBox.Checked)
+                toDoTask.Deadline = new DateTime(deadlineDateTimePicker.Value.Year, deadlineDateTimePicker.Value.Month, deadlineDateTimePicker.Value.Day, deadlineTimeDateTimePicker.Value.Hour, deadlineTimeDateTimePicker.Value.Minute, deadlineTimeDateTimePicker.Value.Second);
+            else
+                toDoTask.Deadline = null;
+
+            //toDoTask.Deadline = new DateTime(deadlineDateTimePicker.Value.Year, deadlineDateTimePicker.Value.Month, deadlineDateTimePicker.Value.Day, deadlineTimeDateTimePicker.Value.Hour, deadlineTimeDateTimePicker.Value.Minute, deadlineTimeDateTimePicker.Value.Second);
             toDoTask.State = (State)stateComboBox.SelectedItem;
 
             mainForm.ToDoApp.Insert(toDoTask);
             mainForm.RefreshUI();
             Close();
+        }
+
+        private void datetimeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (datetimeCheckBox.Checked)
+            {
+                deadlineDateTimePicker.Enabled = true;
+                deadlineTimeDateTimePicker.Enabled = true;
+            }
+            else
+            {
+                deadlineDateTimePicker.Enabled = false;
+                deadlineTimeDateTimePicker.Enabled = false;
+            }
         }
     }
 }

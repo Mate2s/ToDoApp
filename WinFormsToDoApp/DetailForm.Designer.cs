@@ -37,13 +37,14 @@
             descriptionLabel = new System.Windows.Forms.Label();
             descriptionRichTextBox1 = new System.Windows.Forms.RichTextBox();
             detailTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            saveButton = new System.Windows.Forms.Button();
+            stateComboBox = new System.Windows.Forms.ComboBox();
+            stateLabel = new System.Windows.Forms.Label();
+            deadlineTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            deadlineTimeLabel = new System.Windows.Forms.Label();
             deadlineDateTimePicker = new System.Windows.Forms.DateTimePicker();
             deadlineLabel = new System.Windows.Forms.Label();
-            deadlineTimeLabel = new System.Windows.Forms.Label();
-            deadlineTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            saveButton = new System.Windows.Forms.Button();
-            stateLabel = new System.Windows.Forms.Label();
-            stateComboBox = new System.Windows.Forms.ComboBox();
+            datetimeCheckBox = new System.Windows.Forms.CheckBox();
             detailTableLayoutPanel1.SuspendLayout();
             detailTableLayoutPanel2.SuspendLayout();
             detailTableLayoutPanel3.SuspendLayout();
@@ -154,17 +155,19 @@
             // 
             detailTableLayoutPanel3.ColumnCount = 1;
             detailTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            detailTableLayoutPanel3.Controls.Add(deadlineDateTimePicker, 0, 1);
-            detailTableLayoutPanel3.Controls.Add(deadlineLabel, 0, 0);
-            detailTableLayoutPanel3.Controls.Add(deadlineTimeLabel, 0, 2);
-            detailTableLayoutPanel3.Controls.Add(deadlineTimeDateTimePicker, 0, 3);
-            detailTableLayoutPanel3.Controls.Add(saveButton, 0, 6);
-            detailTableLayoutPanel3.Controls.Add(stateLabel, 0, 4);
-            detailTableLayoutPanel3.Controls.Add(stateComboBox, 0, 5);
+            detailTableLayoutPanel3.Controls.Add(saveButton, 0, 7);
+            detailTableLayoutPanel3.Controls.Add(stateComboBox, 0, 6);
+            detailTableLayoutPanel3.Controls.Add(stateLabel, 0, 5);
+            detailTableLayoutPanel3.Controls.Add(deadlineTimeDateTimePicker, 0, 4);
+            detailTableLayoutPanel3.Controls.Add(deadlineTimeLabel, 0, 3);
+            detailTableLayoutPanel3.Controls.Add(deadlineDateTimePicker, 0, 2);
+            detailTableLayoutPanel3.Controls.Add(deadlineLabel, 0, 1);
+            detailTableLayoutPanel3.Controls.Add(datetimeCheckBox, 0, 0);
             detailTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             detailTableLayoutPanel3.Location = new System.Drawing.Point(395, 13);
             detailTableLayoutPanel3.Name = "detailTableLayoutPanel3";
-            detailTableLayoutPanel3.RowCount = 7;
+            detailTableLayoutPanel3.RowCount = 8;
+            detailTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             detailTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             detailTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             detailTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -174,47 +177,6 @@
             detailTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             detailTableLayoutPanel3.Size = new System.Drawing.Size(376, 435);
             detailTableLayoutPanel3.TabIndex = 1;
-            // 
-            // deadlineDateTimePicker
-            // 
-            deadlineDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            deadlineDateTimePicker.Location = new System.Drawing.Point(3, 33);
-            deadlineDateTimePicker.Name = "deadlineDateTimePicker";
-            deadlineDateTimePicker.Size = new System.Drawing.Size(370, 23);
-            deadlineDateTimePicker.TabIndex = 1;
-            // 
-            // deadlineLabel
-            // 
-            deadlineLabel.AutoSize = true;
-            deadlineLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            deadlineLabel.Location = new System.Drawing.Point(3, 0);
-            deadlineLabel.Name = "deadlineLabel";
-            deadlineLabel.Size = new System.Drawing.Size(370, 30);
-            deadlineLabel.TabIndex = 0;
-            deadlineLabel.Text = "Termín";
-            deadlineLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // deadlineTimeLabel
-            // 
-            deadlineTimeLabel.AutoSize = true;
-            deadlineTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            deadlineTimeLabel.Location = new System.Drawing.Point(3, 60);
-            deadlineTimeLabel.Name = "deadlineTimeLabel";
-            deadlineTimeLabel.Size = new System.Drawing.Size(370, 30);
-            deadlineTimeLabel.TabIndex = 2;
-            deadlineTimeLabel.Text = "Čas termínu";
-            deadlineTimeLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // deadlineTimeDateTimePicker
-            // 
-            deadlineTimeDateTimePicker.CustomFormat = "\"hh:mm:ss\"";
-            deadlineTimeDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            deadlineTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            deadlineTimeDateTimePicker.Location = new System.Drawing.Point(3, 93);
-            deadlineTimeDateTimePicker.Name = "deadlineTimeDateTimePicker";
-            deadlineTimeDateTimePicker.ShowUpDown = true;
-            deadlineTimeDateTimePicker.Size = new System.Drawing.Size(370, 23);
-            deadlineTimeDateTimePicker.TabIndex = 3;
             // 
             // saveButton
             // 
@@ -229,25 +191,81 @@
             saveButton.UseVisualStyleBackColor = true;
             saveButton.Click += saveButton_Click;
             // 
+            // stateComboBox
+            // 
+            stateComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            stateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            stateComboBox.Location = new System.Drawing.Point(3, 183);
+            stateComboBox.Name = "stateComboBox";
+            stateComboBox.Size = new System.Drawing.Size(370, 23);
+            stateComboBox.TabIndex = 6;
+            // 
             // stateLabel
             // 
             stateLabel.AutoSize = true;
             stateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            stateLabel.Location = new System.Drawing.Point(3, 120);
+            stateLabel.Location = new System.Drawing.Point(3, 150);
             stateLabel.Name = "stateLabel";
             stateLabel.Size = new System.Drawing.Size(370, 30);
             stateLabel.TabIndex = 5;
             stateLabel.Text = "Stav";
             stateLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // stateComboBox
+            // deadlineTimeDateTimePicker
             // 
-            stateComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            stateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            stateComboBox.Location = new System.Drawing.Point(3, 153);
-            stateComboBox.Name = "stateComboBox";
-            stateComboBox.Size = new System.Drawing.Size(370, 23);
-            stateComboBox.TabIndex = 6;
+            deadlineTimeDateTimePicker.CustomFormat = "\"hh:mm:ss\"";
+            deadlineTimeDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            deadlineTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            deadlineTimeDateTimePicker.Location = new System.Drawing.Point(3, 123);
+            deadlineTimeDateTimePicker.Name = "deadlineTimeDateTimePicker";
+            deadlineTimeDateTimePicker.ShowUpDown = true;
+            deadlineTimeDateTimePicker.Size = new System.Drawing.Size(370, 23);
+            deadlineTimeDateTimePicker.TabIndex = 3;
+            // 
+            // deadlineTimeLabel
+            // 
+            deadlineTimeLabel.AutoSize = true;
+            deadlineTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            deadlineTimeLabel.Location = new System.Drawing.Point(3, 90);
+            deadlineTimeLabel.Name = "deadlineTimeLabel";
+            deadlineTimeLabel.Size = new System.Drawing.Size(370, 30);
+            deadlineTimeLabel.TabIndex = 2;
+            deadlineTimeLabel.Text = "Čas termínu";
+            deadlineTimeLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // deadlineDateTimePicker
+            // 
+            deadlineDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            deadlineDateTimePicker.Location = new System.Drawing.Point(3, 63);
+            deadlineDateTimePicker.Name = "deadlineDateTimePicker";
+            deadlineDateTimePicker.Size = new System.Drawing.Size(370, 23);
+            deadlineDateTimePicker.TabIndex = 1;
+            // 
+            // deadlineLabel
+            // 
+            deadlineLabel.AutoSize = true;
+            deadlineLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            deadlineLabel.Location = new System.Drawing.Point(3, 30);
+            deadlineLabel.Name = "deadlineLabel";
+            deadlineLabel.Size = new System.Drawing.Size(370, 30);
+            deadlineLabel.TabIndex = 0;
+            deadlineLabel.Text = "Termín";
+            deadlineLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // datetimeCheckBox
+            // 
+            datetimeCheckBox.AutoSize = true;
+            datetimeCheckBox.Checked = true;
+            datetimeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            datetimeCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            datetimeCheckBox.Location = new System.Drawing.Point(3, 3);
+            datetimeCheckBox.Name = "datetimeCheckBox";
+            datetimeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            datetimeCheckBox.Size = new System.Drawing.Size(370, 24);
+            datetimeCheckBox.TabIndex = 7;
+            datetimeCheckBox.Text = "Použít časový termín";
+            datetimeCheckBox.UseVisualStyleBackColor = true;
+            datetimeCheckBox.CheckedChanged += datetimeCheckBox_CheckedChanged;
             // 
             // DetailForm
             // 
@@ -284,5 +302,6 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label stateLabel;
         private System.Windows.Forms.ComboBox stateComboBox;
+        private System.Windows.Forms.CheckBox datetimeCheckBox;
     }
 }
