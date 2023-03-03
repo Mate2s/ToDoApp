@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ToDoAppLib.Enums
 {
     public enum State
-    {       
+    {
         InProgress,
         Done
     }

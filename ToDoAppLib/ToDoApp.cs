@@ -13,7 +13,7 @@ using ToDoAppLib.Iterface;
 namespace ToDoAppLib
 {
     public class ToDoApp
-    {        
+    {
         public User User { get; set; }
         public List<ToDoTask> ActualTasks { get; set; }
         public ToDoApp()
@@ -31,7 +31,7 @@ namespace ToDoAppLib
                                 select user;
                     if (query.Count() == 0)
                     {
-                        var user = new User { Username = "admin", Password = "admin" , Email= "test@test.cz"};
+                        var user = new User { Username = "admin", Password = "admin", Email = "test@test.cz" };
                         db.Users.Add(user);
                         db.ToDoTasks.Add(new ToDoTask
                         {
@@ -106,11 +106,12 @@ namespace ToDoAppLib
                 using (var db = new ToDoContext())
                 {
                     ActualTasks = (from t in db.ToDoTasks
-                                 where t.Username == User.Username
-                                 select t).ToList();                    
+                                   where t.Username == User.Username
+                                   select t).ToList();
                 }
             }
-            catch {               
+            catch
+            {
             }
         }
 
@@ -147,7 +148,7 @@ namespace ToDoAppLib
             }
             catch
             {
-               // throw new Exception("DB - insert failed");
+                // throw new Exception("DB - insert failed");
             }
         }
 
